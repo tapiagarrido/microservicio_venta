@@ -89,14 +89,15 @@ WSGI_APPLICATION = 'api_ventas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'API_VENTA_MARKET',
-        'USER': 'postgres',
-        'PASSWORD': 'merkat2024',
-        'HOST': 'localhost',
-        'PORT': '5435'
+        'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
+
 
 
 # Password validation
